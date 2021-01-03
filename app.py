@@ -1,6 +1,6 @@
 import os
 import json
-# from flask_cors import CORS, cross_origin
+from flask_cors import CORS, cross_origin
 from flask import Flask, render_template, request, jsonify
 
 from cpm import *
@@ -9,12 +9,14 @@ from estimated_resource_smoothing import *
 
 
 app = Flask(__name__, template_folder='templates')
+CORS(app)
 
 app.config['UPLOAD_FOLDER'] = "dataset"
 app.static_folder = 'static'
 
 
-@app.route('/postDataset/', methods=['POST', 'PUT'])
+@app.route('/postDataset/', methods=['POST'])
+@cross_origin()
 def post_dataset():
     if request.method == "POST":
         _file = request.files['file']
