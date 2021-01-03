@@ -1,14 +1,17 @@
 import os
 import json
-from cpm import *
-from estimated_resource_smoothing import *
-from burgess_procedure import *
+# from flask_cors import CORS, cross_origin
 from flask import Flask, render_template, request, jsonify
+
+from cpm import *
+from burgess_procedure import *
+from estimated_resource_smoothing import *
 
 
 app = Flask(__name__, template_folder='templates')
-app.static_folder = 'static'
+
 app.config['UPLOAD_FOLDER'] = "dataset"
+app.static_folder = 'static'
 
 
 @app.route('/postDataset/', methods=['POST', 'PUT'])
@@ -20,6 +23,7 @@ def post_dataset():
         result = main( os.path.join(app.config['UPLOAD_FOLDER'], _file.filename) )
         # print(result)
         response = { "estimated": result }
+        response.headers.add('Access-Control-Allow-Origin', '*')
         return json.dumps(response)
 
 
