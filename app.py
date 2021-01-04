@@ -25,11 +25,10 @@ def post_dataset():
         result = main( os.path.join(app.config['UPLOAD_FOLDER'], _file.filename) )
         # print(result)
         response = { "estimated": result }
-        response.headers.add('Access-Control-Allow-Origin', '*')
         return json.dumps(response)
 
 
-# A welcome message to test our server
+
 @app.route('/')
 def index():
     return render_template('index.html')
