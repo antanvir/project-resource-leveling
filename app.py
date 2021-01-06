@@ -9,7 +9,7 @@ from estimated_resource_smoothing import *
 
 
 app = Flask(__name__, template_folder='templates')
-CORS(app)
+CORS(app, resources={ r"/postDataset/": {"origins": "*"} })
 
 app.config['UPLOAD_FOLDER'] = "dataset"
 app.static_folder = 'static'
