@@ -15,7 +15,7 @@ app.config['UPLOAD_FOLDER'] = "dataset"
 app.static_folder = 'static'
 
 
-@app.route('/postDataset/', methods=['POST'])
+@app.route('/postDataset/', methods=['POST', 'PUT'])
 @cross_origin()
 def post_dataset():
     if request.method == "POST":
