@@ -190,5 +190,5 @@ class CPM:
         
         self.calculate_slack_time_of_the_nodes()
         self.mark_critical_nodes_in_network()
-        self.print_node_matrix()
+        # self.print_node_matrix()
         # node_matrix = self.get_node_matrix()

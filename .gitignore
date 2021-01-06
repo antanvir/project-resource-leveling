@@ -1,6 +1,7 @@
-test.py
 .venv
+.vscode
 venv
 __pycache__
-.vscode
 debug.log
+test.py
+burgess2.py

@@ -23,8 +23,9 @@ def post_dataset():
         if _file.filename != '':
             _file.save( os.path.join(app.config['UPLOAD_FOLDER'], _file.filename) )
         result = main( os.path.join(app.config['UPLOAD_FOLDER'], _file.filename) )
-        # print(result)
-        response = { "estimated": result }
+
+        response = { "estimated": result["estimated"], "burgess1": result["burgess1"], "burgess2": result["burgess2"] }
+        # print(response)
         return json.dumps(response)
 
 
@@ -40,7 +41,7 @@ def main(filepath):
     input_file = filepath
     cpm = None
     node_matrix = None
-    result = []
+    result = {"estimated": None, "burgess1": None, "burgess2": None}
 
     cpm = CPM()
     cpm.find_all_activity_informations(input_file)
@@ -49,11 +50,14 @@ def main(filepath):
     
     # ==== Estimated Method ===== #
     estimatedSmoothing = EstimatedResourceSmoothing(node_matrix)
-    result = estimatedSmoothing.estimate_optimal_schedule()
+    result["estimated"] = estimatedSmoothing.estimate_optimal_schedule()
 
     # ==== Burgess Procedure ===== #
-    # burgessProcedure = BurgessProcedure(node_matrix)
-    # result = burgessProcedure.estimate_optimal_schedule()
+    burgessProcedure1 = BurgessProcedure(node_matrix)
+    result["burgess1"] = burgessProcedure1.estimate_optimal_schedule_burgess1()
+    
+    burgessProcedure2 = BurgessProcedure(node_matrix)
+    result["burgess2"] = burgessProcedure2.estimate_optimal_schedule_burgess2()
     return result
 
 
