@@ -1,5 +1,6 @@
 import os
 import json
+# import yaml
 from flask_cors import CORS, cross_origin
 from flask import Flask, render_template, request, jsonify
 
@@ -23,10 +24,13 @@ def post_dataset():
         if _file.filename != '':
             _file.save( os.path.join(app.config['UPLOAD_FOLDER'], _file.filename) )
         result = main( os.path.join(app.config['UPLOAD_FOLDER'], _file.filename) )
-
         response = { "estimated": result["estimated"], "burgess1": result["burgess1"], "burgess2": result["burgess2"] }
-        # print(response)
-        return json.dumps(response)
+        # print(response["estimated"]["node_matrix"])
+        # print(response["burgess1"]["node_matrix"])
+        # print(response["burgess2"]["node_matrix"])
+        # with open(r'dataset/resp.yaml', 'w') as file:
+        #     documents = yaml.dump(response, file)
+        return jsonify(response)
 
 
 
@@ -47,17 +51,24 @@ def main(filepath):
     cpm.find_all_activity_informations(input_file)
     node_matrix = cpm.get_node_matrix()
     # print(node_matrix)
-    
+    print("EST --- \n")
     # ==== Estimated Method ===== #
     estimatedSmoothing = EstimatedResourceSmoothing(node_matrix)
     result["estimated"] = estimatedSmoothing.estimate_optimal_schedule()
 
+    print("BUR 1 --- \n")
     # ==== Burgess Procedure ===== #
     burgessProcedure1 = BurgessProcedure(node_matrix)
     result["burgess1"] = burgessProcedure1.estimate_optimal_schedule_burgess1()
     
+
+    print("BUR 2 --- \n")
     burgessProcedure2 = BurgessProcedure(node_matrix)
     result["burgess2"] = burgessProcedure2.estimate_optimal_schedule_burgess2()
+    # print(result["estimated"]["node_matrix"])
+    # print(result["burgess1"]["node_matrix"])
+    # print(result["burgess2"]["node_matrix"])
+    # print("\n\n")
     return result
 
 

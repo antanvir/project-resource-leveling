@@ -1,0 +1,330 @@
+burgess1:
+  R2_by_time:
+  - 0
+  - 9
+  - 25
+  - 25
+  - 25
+  - 81
+  - 81
+  - 36
+  - 49
+  - 49
+  - 49
+  - 49
+  - 49
+  - 49
+  - 36
+  - 36
+  - 25
+  - 25
+  - 25
+  R_by_time:
+  - 0
+  - 3
+  - 5
+  - 5
+  - 5
+  - 9
+  - 9
+  - 6
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 6
+  - 6
+  - 5
+  - 5
+  - 5
+  node_matrix:
+  - ES: 15
+    LF: 18
+    OF: 18
+    OS: 15
+    name: K
+    resource: '5'
+  - ES: 9
+    LF: 18
+    OF: 15
+    OS: 10
+    name: H
+    resource: '2'
+  - ES: 0
+    LF: 3
+    OF: 3
+    OS: 0
+    name: A
+    resource: '3'
+  - ES: 3
+    LF: 10
+    OF: 6
+    OS: 4
+    name: D
+    resource: '4'
+  - ES: 0
+    LF: 9
+    OF: 6
+    OS: 1
+    name: B
+    resource: '2'
+  - ES: 5
+    LF: 13
+    OF: 10
+    OS: 6
+    name: G
+    resource: '3'
+  - ES: 5
+    LF: 13
+    OF: 9
+    OS: 6
+    name: F
+    resource: '1'
+  - ES: 3
+    LF: 9
+    OF: 9
+    OS: 3
+    name: C
+    resource: '3'
+  - ES: 9
+    LF: 13
+    OF: 13
+    OS: 9
+    name: I
+    resource: '3'
+  - ES: 5
+    LF: 13
+    OF: 13
+    OS: 10
+    name: E
+    resource: '2'
+  - ES: 13
+    LF: 15
+    OF: 15
+    OS: 13
+    name: J
+    resource: '4'
+  optimal_total_R: 111
+  optimal_total_R_square: 723
+burgess2:
+  R2_by_time:
+  - 0
+  - 25
+  - 25
+  - 25
+  - 81
+  - 81
+  - 36
+  - 36
+  - 49
+  - 49
+  - 36
+  - 49
+  - 49
+  - 25
+  - 36
+  - 36
+  - 25
+  - 25
+  - 25
+  R_by_time:
+  - 0
+  - 5
+  - 5
+  - 5
+  - 9
+  - 9
+  - 6
+  - 6
+  - 7
+  - 7
+  - 6
+  - 7
+  - 7
+  - 5
+  - 6
+  - 6
+  - 5
+  - 5
+  - 5
+  node_matrix:
+  - ES: 15
+    LF: 18
+    OF: 18
+    OS: 15
+    name: K
+    resource: '5'
+  - ES: 9
+    LF: 18
+    OF: 15
+    OS: 10
+    name: H
+    resource: '2'
+  - ES: 0
+    LF: 3
+    OF: 3
+    OS: 0
+    name: A
+    resource: '3'
+  - ES: 3
+    LF: 10
+    OF: 5
+    OS: 3
+    name: D
+    resource: '4'
+  - ES: 0
+    LF: 9
+    OF: 5
+    OS: 0
+    name: B
+    resource: '2'
+  - ES: 5
+    LF: 13
+    OF: 9
+    OS: 5
+    name: G
+    resource: '3'
+  - ES: 5
+    LF: 13
+    OF: 10
+    OS: 7
+    name: F
+    resource: '1'
+  - ES: 3
+    LF: 9
+    OF: 9
+    OS: 3
+    name: C
+    resource: '3'
+  - ES: 9
+    LF: 13
+    OF: 13
+    OS: 9
+    name: I
+    resource: '3'
+  - ES: 5
+    LF: 13
+    OF: 12
+    OS: 9
+    name: E
+    resource: '2'
+  - ES: 13
+    LF: 15
+    OF: 15
+    OS: 13
+    name: J
+    resource: '4'
+  optimal_total_R: 111
+  optimal_total_R_square: 713
+estimated:
+  R2_by_time:
+  - 0
+  - 25
+  - 25
+  - 25
+  - 25
+  - 81
+  - 49
+  - 36
+  - 36
+  - 36
+  - 36
+  - 36
+  - 36
+  - 36
+  - 36
+  - 36
+  - 49
+  - 49
+  - 49
+  R_by_time:
+  - 0
+  - 5
+  - 5
+  - 5
+  - 5
+  - 9
+  - 7
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 7
+  - 7
+  - 7
+  node_matrix:
+  - ES: 15
+    LF: 18
+    OF: 18
+    OS: 15
+    name: K
+    resource: '5'
+  - ES: 9
+    LF: 18
+    OF: 18
+    OS: 13
+    name: H
+    resource: '2'
+  - ES: 0
+    LF: 3
+    OF: 3
+    OS: 0
+    name: A
+    resource: '3'
+  - ES: 3
+    LF: 10
+    OF: 6
+    OS: 4
+    name: D
+    resource: '4'
+  - ES: 0
+    LF: 9
+    OF: 5
+    OS: 0
+    name: B
+    resource: '2'
+  - ES: 5
+    LF: 13
+    OF: 10
+    OS: 6
+    name: G
+    resource: '3'
+  - ES: 5
+    LF: 13
+    OF: 13
+    OS: 10
+    name: F
+    resource: '1'
+  - ES: 3
+    LF: 9
+    OF: 9
+    OS: 3
+    name: C
+    resource: '3'
+  - ES: 9
+    LF: 13
+    OF: 13
+    OS: 9
+    name: I
+    resource: '3'
+  - ES: 5
+    LF: 13
+    OF: 13
+    OS: 10
+    name: E
+    resource: '2'
+  - ES: 13
+    LF: 15
+    OF: 15
+    OS: 13
+    name: J
+    resource: '4'
+  optimal_total_R: 111
+  optimal_total_R_square: 701

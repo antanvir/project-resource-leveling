@@ -182,6 +182,17 @@ class BurgessProcedure:
 		total_R2 = int(self.optimal_total_R_square)
 		node_matrix = self.node_matrix
 
+		node_matrix = []
+		for i, node in enumerate(self.node_matrix):
+			single_node = {}
+			single_node["ES"] = node["ES"]
+			single_node["OS"] = node["OS"]
+			single_node["OF"] = node["OF"]
+			single_node["LF"] = node["LF"]
+			single_node["name"] = node["name"]
+			single_node["resource"] = node["resource"]
+			node_matrix.append(single_node)
+
 		for node in self.node_matrix:
 			if node["critical"] == False:               
 				R_by_time = np.array(self.delay_activity_r[node["name"]], dtype=int)
@@ -198,7 +209,7 @@ class BurgessProcedure:
 		self.separate_critical_activities()
 		allotted_resources_for_cp = self.generate_time_resource_matrix()
 		self.burgess_scheduler1(allotted_resources_for_cp)
-		# self.print_burgess_schedule_details()
+		self.print_burgess_schedule_details()
 		# print(self.prepare_burgess_response())
 		return self.prepare_burgess_response()
 
@@ -207,7 +218,7 @@ class BurgessProcedure:
 		self.separate_critical_activities()
 		allotted_resources_for_cp = self.generate_time_resource_matrix()
 		self.burgess_scheduler2(allotted_resources_for_cp)
-		# self.print_burgess_schedule_details()
+		self.print_burgess_schedule_details()
 		
 		return self.prepare_burgess_response()
 		

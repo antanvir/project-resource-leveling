@@ -144,13 +144,24 @@ class EstimatedResourceSmoothing:
         self.separate_critical_activities()
         time_resource_matrix = self.generate_time_resource_matrix()
         self.estimated_resource_scheduler(time_resource_matrix)
-        node_matrix = self.node_matrix
+        node_matrix = []
+        for i, node in enumerate(self.node_matrix):
+            single_node = {}
+            single_node["ES"] = node["ES"]
+            single_node["OS"] = node["OS"]
+            single_node["OF"] = node["OF"]
+            single_node["LF"] = node["LF"]
+            single_node["name"] = node["name"]
+            single_node["resource"] = node["resource"]
+            node_matrix.append(single_node)
+
+
         R_by_time = self.R_by_time.tolist()
         R2_by_time = self.R2_by_time.tolist()
         optimal_total_R = int(self.optimal_total_R)
         optimal_total_R_square = int(self.optimal_total_R_square)
         # print(optimal_total_R_square)
-        # self.print_estimate_schedule_details()
+        self.print_estimate_schedule_details()
         return {"node_matrix": node_matrix , "R_by_time": R_by_time, "R2_by_time": R2_by_time, 
                     "optimal_total_R": optimal_total_R, "optimal_total_R_square": optimal_total_R_square}
         
